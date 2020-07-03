@@ -1,0 +1,54 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    text-align: center;
+}
+
+
+.container {
+    background-color: rgba(173, 216, 230, 0.164);
+    border-top: solid darkblue 1px;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+input,
+label {
+    margin-top: 5px;
+}
+
+table {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom:  solid darkblue 1px; 
+}
+
+th {
+    border-bottom: black solid 1px;
+}
+
+tbody{
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.index-btn{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color:blue;
+    margin: 10px  ;
+    transition: ease-in;
+    color: white;
+}
+
+.index-btn:hover{
+    transform: scale(1.1);
+}

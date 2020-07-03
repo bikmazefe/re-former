@@ -1,0 +1,50 @@
+
+<!--
+<form action = '/users' method = 'post' accept-charset ='UTF-8'>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for ='username'>Username:</label>
+    <input type ='text' id ='username' name='user[username]'>
+    <label for ='password'>Password:</label>
+    <input type ='password' id ='password' name='user[password]'>
+    <label for ='email'>Email:</label>
+    <input type ='text' id ='email' name='user[email]'>
+    <input type ='submit' value = 'Submit'>
+</form>
+
+
+=begin
+<%= form_tag('/users',  method:'post') do %>
+    <%= label_tag(:username,  "Username:") %>
+    <%= text_field_tag(:username) %>
+    <%= label_tag(:password,  "Password:") %>
+    <%= password_field_tag(:password) %>
+    <%= label_tag(:email,  "Email:") %>
+    <%= text_field_tag(:email) %>
+    <%= submit_tag("Submit") %>
+<% end %>
+=end
+
+-->
+
+
+<%= form_for @user, url: {action: "create"} do |f| %>
+    <%= f.label :username, 'Username:' %> <br>
+    <%= f.text_field :username, :value => 'john_doe' %> <br>
+    <%= f.label :password, 'Password:' %> <br>
+    <%= f.password_field :password %> <br>
+    <%= f.label :email, 'Email:' %> <br>
+    <%= f.text_field :email, placeholder: 'example@example.com' %> <br>
+    <%= f.submit "Submit" %>
+<%end%>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation" class="mt-2">
+    <h2><span class="text-danger"><%= pluralize(@user.errors.count, "error") %></span> prohibited this post from being saved:</h2>
+
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+<% end %>
