@@ -52,3 +52,35 @@ a {
 .index-btn:hover{
     transform: scale(1.1);
 }
+
+
+#edit-btn{
+    background-color: green;
+}
+
+#delete-btn{
+    background-color: red;
+}
+
+#new-user-button{
+    margin-top: 30px;
+}
+
+button{
+    margin-top: 30px;
+    background-color: blue;
+    color: white;
+}
+
+.alert{
+    color: green;
+    background-color: gainsboro;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+li{
+    list-style: none;
+}

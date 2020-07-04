@@ -27,24 +27,6 @@
 -->
 
 
-<%= form_for @user, url: {action: "create"} do |f| %>
-    <%= f.label :username, 'Username:' %> <br>
-    <%= f.text_field :username, :value => 'john_doe' %> <br>
-    <%= f.label :password, 'Password:' %> <br>
-    <%= f.password_field :password %> <br>
-    <%= f.label :email, 'Email:' %> <br>
-    <%= f.text_field :email, placeholder: 'example@example.com' %> <br>
-    <%= f.submit "Submit" %>
-<%end%>
+<h1> New User </h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation" class="mt-2">
-    <h2><span class="text-danger"><%= pluralize(@user.errors.count, "error") %></span> prohibited this post from being saved:</h2>
-
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-
-<% end %>
+<%= render partial: 'form' %>

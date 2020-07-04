@@ -1,21 +1,4 @@
-<%= form_for @user do |f| %>
-    <%= f.label :username, 'Username:' %>
-    <%= f.text_field :username, :value => 'john_doe' %>
-    <%= f.label :password, 'Password:' %>
-    <%= f.text_field :password %>
-    <%= f.label :email, 'Email:' %>
-    <%= f.text_field :email, placeholder: 'example@example.com' %>
-    <%= f.submit "Submit" %>
-<%end%>
+<h1>Edit User</h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation" class="mt-2">
-    <h2><span class="text-danger"><%= pluralize(@user.errors.count, "error") %></span> prohibited this post from being saved:</h2>
+<%= render partial: 'form' %>
 
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-
-    <% end %>

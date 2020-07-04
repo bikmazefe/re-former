@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
+    resources :users, except: [:show]
     root 'users#index'
-    resources :users, only: [:new, :create, :edit, :update]
+    get '/users', to: 'users#index'
 
 end

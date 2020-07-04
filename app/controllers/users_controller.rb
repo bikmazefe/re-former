@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         
         if @user.save
-            flash[:success] = 'User updated successfully'
+            flash[:success] = 'User created successfully'
             redirect_to root_path
         else
             flash.now[:error] = 'Rats! Fix your mistakes, please.'
@@ -30,11 +30,18 @@ class UsersController < ApplicationController
 
         if @user.update(user_params)
             flash[:success] = 'User updated successfully'
-            render :edit
+            redirect_to root_path
         else
             flash.now[:error] = 'Rats! Fix your mistakes, please.'
             render :edit
         end
+    end
+
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        flash[:success] = 'User deleted successfully'
+        redirect_to root_path
     end
 
     private
